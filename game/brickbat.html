@@ -1,10 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang= "zh-Hans">
-<head>  小游戏 打砖块 </head>
-<hr/>
+  <head>
+      <meta charset="utf-8">
+      <title> Game_Brickbat </title>
+      <style media="screen">
+          canvas{
+            border: 1px black solid;
+          }
+      </style>
 
-<hr/>
-<a href="/index.html"> home </a>
+  <body>
+    <hr></hr>
+    <canvas id="id-canvas" width="400" height="300" ></canvas>
+  <script>
+//      <h1 style="color: red"> Game Brickbar </h1>
+// 将log方法的this指向cocnsole
+    var log = console.log.bind(console)
 
+    var imagepath = function (path) {
+      var img = new Image()
+      img.src = path
+      return img
+    }
 
+    var Paddle = function () {
+      var image = imagepath('image/paddle.png')
+      var o = {
+        image: image,
+        x: 150,
+        y: 250,
+        v: 5,
+      }
+      o.moveLeft = function(){
+          o.x -= o.v
+      }
+      o.moveRight = function(){
+          o.x += o.v
+      }
+      return o
+}
+
+  var _main = function(){
+    var canvas = document.querySelector('#id-canvas')
+    var context = canvas.getContext('2d')
+    var paddle = Paddle()
+
+    var leftdown = false
+    var rightdown = false
+
+    window.addEventListener('keydown',function(event){
+      var k =event.key
+      if(k=='a'){
+        leftdown = true
+      }else if(k=='d'){
+        rightdown = true
+      }
+    })
+
+    window.addEventListener('keyup',function(event){
+      var k =event.key
+      if(k=='a'){
+        leftdown = false
+      }else if(k=='d'){
+        rightdown = false
+      }
+    })
+
+setInterval(function () {
+
+    if (leftdown){
+      paddle.moveLeft()
+    }else if(rightdown){
+      paddle.moveRight()
+    }
+    context.clearRect(0, 0, canvas.width, canvas.height)
+    context.drawImage(paddle.image, paddle.x, paddle.y)
+  }, 1000/60)
+  }
+
+_main()
+  </script>
+    <hr></hr>
+    <a href="../index.html"> Home </a>
+  </body>
 </html>
