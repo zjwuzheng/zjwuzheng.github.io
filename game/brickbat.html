@@ -32,10 +32,14 @@
         v: 5,
       }
       o.moveLeft = function(){
+        if(o.x>0){
           o.x -= o.v
+        }
       }
       o.moveRight = function(){
+        if((o.x+o.image.width)<400){
           o.x += o.v
+        }
       }
 
       o.collide = function(ball){
