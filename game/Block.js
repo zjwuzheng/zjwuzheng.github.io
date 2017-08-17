@@ -8,9 +8,13 @@ var Block = function (position) {
     w: 50,
     h: 20,
     alive: true,
+    healthy: p[2] || 1,
   }
   o.kill = function(){
-    o.alive = false
+    o.healthy -=1
+    if(o.healthy < 1){
+      o.alive = false
+    }
   }
 
   o.collide = function(b) {

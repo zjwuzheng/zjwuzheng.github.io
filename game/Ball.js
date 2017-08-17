@@ -7,6 +7,7 @@ var Ball = function () {
     vx: 3.5,
     vy: 3.5,
     fired: false,
+    over: false,
   }
 
   o.ft =function(){
@@ -18,11 +19,14 @@ var Ball = function () {
   }
   o.move = function(){
     if (o.fired){
-      if(o.x <0 || o.x >400){
+      if(o.x <1 || o.x >399-o.image.width){
         o.vx *=-1
       }
-      if(o.y <0 || o.y >300){
+      if(o.y <1){
         o.vy *=-1
+      }
+      if( o.y >299-o.image.height){
+      o.over = true
       }
     o.x +=o.vx
     o.y +=o.vy

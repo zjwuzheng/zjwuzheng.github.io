@@ -58,7 +58,6 @@ var enableDebugMode = function(enable) {
     })
 }
 
-
     var _main = function(){
 
       var as = enableDebugMode(true)
@@ -66,6 +65,9 @@ var enableDebugMode = function(enable) {
       var paddle = Paddle()
       var ball = Ball()
       blocks = loadLevel(1)
+      var num = 0
+      var k = 2
+      var len = blocks.length
 
       var paused = false
 
@@ -86,11 +88,19 @@ var enableDebugMode = function(enable) {
 
         ball.move()
 
+        if (len < 1){
+          blocks = loadLevel(k)
+          k = k+1
+          len = blocks.length
+
+        }
         for (var i = 0; i < blocks.length; i++) {
           var block = blocks[i]
           if (block.collide(ball)){
             block.kill()
+            len --
             ball.ft()
+            num +=100
           }
         }
 
@@ -109,9 +119,23 @@ var enableDebugMode = function(enable) {
             game.drawImage(block)
           }
         }
+        game.context.font = '15px serif'
+        game.context.fillText('Score:'+num, 20, 285)
       }
 
+      game.overtest = function(go){
+        var go = false
+        if(ball.over){
+          game.context.font = '45px serif'
+          game.context.fillText('Game Over', 90, 120)
+          game.context.font = '35px serif'
+          game.context.fillText('Score:'+num, 120, 180)
+          go = true
+          return go
+        }
+      }
     }
+
 
 _main()
   </script>

@@ -24,7 +24,7 @@ var Brickbar = function(fps){
     g.actions[key] = callback
   }
 
-  window.fps = 30
+  window.fps = 60
   var runloop = function() {
       // events
       var actions = Object.keys(g.actions)
@@ -39,6 +39,10 @@ var Brickbar = function(fps){
       g.update()
       // clear
       context.clearRect(0, 0, canvas.width, canvas.height)
+
+      if(g.overtest()){
+        return
+      }
       // draw
       g.draw()
       // next run loop
