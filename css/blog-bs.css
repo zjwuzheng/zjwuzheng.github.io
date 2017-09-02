@@ -1,0 +1,8 @@
+.blog-bs {
+  color:red;
+}
+
+.blog-bs-head .navbar-nav > li > a {
+  color:#6f5499;
+  font-weight: 500;
+}
