@@ -1,8 +1,46 @@
 .blog-bs {
-  color:red;
+
 }
 
 .blog-bs-head .navbar-nav > li > a {
-  color:#6f5499;
+  color:#555;
   font-weight: 500;
+}
+
+.search-a > form > input {
+  height: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 16px;
+}
+.search-top {
+  background-color: #353535;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+#top {
+  margin-bottom: 0px;
+}
+
+#search-1 {
+  margin-top: -10px;
+  height: 40px;
+}
+
+#search-2 {
+  height: 40px;
+  width: 200px;
+}
+
+.website >div >ul >li {
+  font-size: 18px;
+  margin: 15px 30px;
+}
+.website-1{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 1000px;
+  border: 1px solid;
+  border-color: #dddddd;
 }
