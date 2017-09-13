@@ -11,7 +11,7 @@ Array.sort(function()) 对数组排序
 String.sunstr(,) 提取从指定位置开始指定长度的字符串
 String.slice(,) 提取从指定位置到指定位置的字符串
 Array.splice(,,) 在指定位置删除/添加元素
-String.indexOf() 索引字符串出现的次数
+String.indexOf() 索引字符串出现的位置
 Array.filter() 删除指定的元素/按条件过滤元素
 Boolean Objects 对象是一个布尔值的对象包装器
 Arguments Object 是一个类似数组的对象, 对应于传递给函数的参数
