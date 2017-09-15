@@ -72,3 +72,5 @@ MAth.floor() 向下取整
 Array.map() 迭代每个元素
 Array.reduce() 迭代一个数组，累积到一个值中
 Arrar.concatMe() 拼接数组
+Array.findIndex(func) 第一个满足函数的元素的位置
+Array.isArray() 判断是否是数组
