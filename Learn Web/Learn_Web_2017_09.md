@@ -74,3 +74,4 @@ Array.reduce() 迭代一个数组，累积到一个值中
 Arrar.concatMe() 拼接数组
 Array.findIndex(func) 第一个满足函数的元素的位置
 Array.isArray() 判断是否是数组
+Number.isFinite(num) 检测数字是否是无穷大
